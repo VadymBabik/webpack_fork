@@ -1,0 +1,231 @@
+.header-bar {
+  background: $bgColorHeader;
+  padding: 30px 5px;
+  @include small {
+    padding: 22px 10px 0;
+  }
+  @include medium {
+    background: initial;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-areas: "logo button burger";
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    align-items: center;
+    @include small {
+      grid-template-areas: "logo button" "menu menu";
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: max-content max-content;
+    }
+    @include medium {
+      grid-template-areas: "logo menu button";
+      grid-template-columns: min-content 1fr min-content;
+      grid-template-rows: max-content;
+    }
+  }
+
+  .logo {
+    grid-area: logo;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all 150ms linear;
+
+    &__icon {
+      display: block;
+      width: 43px;
+      height: 41px;
+      background-image: url(../img/logo/logo.png);
+    }
+
+    &__text {
+      display: none;
+      margin-left: 17px;
+      @include Lato;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: $purple;
+      @include small {
+        display: block;
+      }
+    }
+
+    &:hover .logo__text {
+      color: $white;
+    }
+
+    &:hover .logo__icon {
+      background-image: url(../img/logo/logo_hover.png);
+    }
+  }
+
+  &__button {
+    grid-area: button;
+    width: max-content;
+    justify-self: center;
+    transition: all 150ms linear;
+
+    @include small {
+      padding: 11px 40px;
+      justify-self: end;
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+
+  &__menu {
+    grid-area: menu;
+    position: absolute;
+    top: 101px;
+    left: 0;
+    display: none;
+    @include small {
+      position: static;
+      display: block;
+    }
+    @include medium {
+      align-self: center;
+      justify-self: end;
+    }
+  }
+
+  .header-menu {
+    width: 100%;
+    padding: 0 15px;
+    z-index: 1;
+    @include small {
+      width: inherit;
+      padding: 30px 0 18px;
+    }
+    @include medium {
+      padding: 0;
+    }
+
+    &__list {
+      @include small {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 500px;
+      }
+      @include medium {
+        max-width: initial;
+        justify-content: flex-end;
+        &:last-child {
+          padding-right: 48px;
+        }
+      }
+    }
+
+    &__items {
+      padding: 19px 0;
+      background: $bgMobMenu;
+      border-bottom: 3px solid $borderBottomMobMenu;
+      @include small {
+        padding: 0;
+        background: none;
+        border-bottom: none;
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 26px;
+      padding: 4px 0 4px 29px;
+      line-height: 53px;
+      color: $white;
+      border-left: 8px solid $bgMobMenu;
+      transition: color 150ms linear, border-left 150ms linear;
+      @include small {
+        text-decoration: none;
+        font-weight: $bold;
+        font-size: 16px;
+        line-height: 18px;
+        color: $purple;
+        border-left: none;
+        padding: 0;
+        transition: color 150ms linear, border-left 150ms linear;
+      }
+      @include medium {
+        line-height: 15px;
+        padding: 0 23px;
+      }
+
+      &:hover {
+        color: $purple;
+        border-left: 8px solid $purple;
+        @include small {
+          color: $white;
+          border-left: none;
+        }
+      }
+    }
+  }
+
+  .show {
+    display: block;
+  }
+
+  &__burger {
+    grid-area: burger;
+    justify-self: end;
+    width: 26px;
+    height: 25px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    @include small {
+      display: none;
+    }
+
+    span {
+      position: absolute;
+      top: 50%;
+      margin-top: -2px;
+      right: 50%;
+      margin-right: -13px;
+      width: 26px;
+      height: 4px;
+      background-color: $white;
+      border-radius: 2px;
+
+      &::before,
+      &::after {
+        content: "";
+        @extend span;
+        transition: 0.2s;
+      }
+
+      &::before {
+        width: 15px;
+        transform: translateY(-10px);
+      }
+
+      &::after {
+        transform: translateY(10px);
+      }
+    }
+  }
+
+  .active {
+    span {
+      margin-top: 0;
+      height: 0;
+
+      &::before {
+        width: 26px;
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

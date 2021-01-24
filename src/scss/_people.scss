@@ -1,0 +1,79 @@
+.people {
+  background-image: url(../img/bg/people_320.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin: 0 auto;
+  @include small {
+    background-image: url(../img/bg/people_768.png);
+  }
+  @include medium {
+    background-image: url(../img/bg/people_1200.png);
+  }
+
+  @include Lato;
+  font-weight: $bold;
+
+  &__wrapper {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 36px;
+    padding: 57px 10px 0;
+  }
+
+  &__list {
+    padding: 53px 10px 37px;
+    @include small {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 30px;
+    }
+    @include medium {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: 90px;
+    }
+  }
+
+  &__img {
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__subtitle {
+    font-style: italic;
+    font-size: 16px;
+    line-height: 24px;
+    color: $white;
+  }
+
+  &__text {
+    margin: 0 20px;
+    font-weight: $regular;
+    font-size: 14px;
+    line-height: 21px;
+    color: $peopleText;
+    @include small {
+      margin: 0 10px;
+    }
+    @include medium {
+      margin: 0 170px;
+    }
+  }
+
+  &__line {
+    display: block;
+    height: 2px;
+    background: $peopleLine;
+    margin: 22px 20px 0;
+    @include small {
+      margin: 22px 90px 0;
+    }
+    @include medium {
+      margin: 22px 285px 0
+    }
+  }
+}

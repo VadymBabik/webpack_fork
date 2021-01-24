@@ -1,0 +1,24 @@
+.btn {
+  text-decoration: none;
+  font-size: 15px;
+  color: $white;
+  background: $purple;
+  padding: 11px 24px;
+  border-radius: 40px;
+  outline: none;
+  border: 1px solid transparent;
+
+  &:hover {
+    color: $purple;
+    background: $white;
+  }
+}
+
+.title {
+  @include Montserrat;
+  font-size: 48px;
+  line-height: 48px;
+  color: $white;
+  font-weight: $bold;
+
+}

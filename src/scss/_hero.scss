@@ -1,0 +1,76 @@
+.hero {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-transform: capitalize;
+
+  &__title {
+    padding: 50px 0 19px;
+    @include small {
+      padding: 70px 0 19px;
+      font-size: 72px;
+      line-height: 72px;
+    }
+    @include medium {
+      padding: 110px 0 19px;
+      font-size: 82px;
+      line-height: 82px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: $purple;
+    @include small {
+      @include Lato;
+      font-size: 24px;
+      line-height: 24px;
+    }
+    @include medium {
+      font-size: 30px;
+      line-height: 30px;
+    }
+  }
+
+  &__text {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $grey;
+    padding: 14px 0 416px;
+    @include small {
+      padding: 14px 0 465px;
+    }
+    @include medium {
+      font-size: 16px;
+      line-height: 16px;
+      padding: 19px 0 459px;
+    }
+  }
+
+  &__button {
+    font-size: 18px;
+    line-height: 20px;
+    transform: translateY(50%);
+    margin: 0 auto;
+    transition: color 150ms linear, background 150ms linear;
+    @include small {
+      font-size: 21px;
+      line-height: 23px;
+      padding: 23px 61px;
+    }
+    @include medium {
+      line-height: 23px;
+    }
+
+    &:hover {
+      border: 1px solid $purple;
+    }
+  }
+}

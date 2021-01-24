@@ -1,0 +1,55 @@
+@mixin Montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@mixin Lato {
+  font-family: 'Lato', sans-serif;
+}
+
+@mixin hoverButton {
+  color: $purple;
+  background: $white;
+}
+
+@mixin uppercase {
+  text-transform: uppercase;
+}
+/*FLEX*/
+@mixin flex($display, $wrap, $justify, $align) {
+  display: $display;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+
+/*MEDIA QUERIES*/
+@mixin small {
+  @media (min-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+@mixin x-large {
+  @media (min-width: #{$screen-xlg}) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media (max-width: #{$screen-xs}) {
+    @content;
+  }
+}

@@ -1,0 +1,35 @@
+.header {
+  min-width: 320px;
+
+  &__wrapper {
+    background-image: url(../img/bg/fork_320.jpg);
+    @include small {
+      background-image: url(../img/bg/fork_768.jpg);
+    }
+    @include medium {
+      background-image: url(../img/bg/fork_1200.jpg);
+    }
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin: 0 auto;
+    font-weight: $bold;
+  }
+
+  &__footer {
+    margin-top: 35px;
+    font-weight: $regular;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    color: $grey;
+    @include small {
+      margin-top: 55px;
+      line-height: 16px;
+    }
+    @include medium {
+      margin-top: 60px;
+      line-height: 15px;
+    }
+  }
+}

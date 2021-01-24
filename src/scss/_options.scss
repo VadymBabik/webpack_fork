@@ -1,0 +1,129 @@
+.options {
+  position: relative;
+  padding-bottom: 6px;
+  @include medium {
+    background-color: $lightGrey;
+    padding-top: 100px;
+    padding-bottom: 33px;
+  }
+
+  &__title {
+    grid-area: title;
+    font-weight: 700;
+    font-size: calc(28px + 16 * (100vw / 1280));
+    line-height: 38px;
+    color: $purple;
+    text-align: center;
+    @include small {
+      line-height: 44px;
+    }
+    @include medium {
+      line-height: 50px;
+    }
+    @include large {
+      font-size: 48px;
+      line-height: 50px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include medium {
+      display: grid;
+      grid-template-areas:
+    "list title"
+    "list image";
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+  }
+
+  &__list {
+    grid-area: list;
+    padding: 36px 0 21px 0;
+
+    @include medium {
+      padding: 0;
+      margin-bottom: 0;
+    }
+
+  }
+
+  &__image {
+    background-image: url(../img/options/editor-mob.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 381px;
+    @include small {
+      background-image: url(../img/options/editor.png);
+      background-repeat: no-repeat;
+      height: 519px;
+    }
+    @include medium {
+      grid-area: image;
+      position: absolute;
+      right: 0;
+      width: 50%;
+      top: 20%;
+      height: 80%;
+      margin: 0;
+      background-position: left;
+    }
+    @include large {
+      position: absolute;
+      right: 0;
+      width: 50%;
+      height: 80%;
+      margin: 0;
+    }
+  }
+
+  &__item {
+    padding-bottom: 37px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include small {
+      display: grid;
+      padding-bottom: 33px;
+      grid-template-columns: 135px 1fr;
+    }
+    @include medium {
+      padding-bottom: 15px;
+      padding-right: 50px;
+    }
+  }
+
+  &__img {
+    @include small {
+      width: 250px;
+    }
+  }
+}
+
+.text-options {
+  text-align: center;
+  @include small {
+    text-align: left;
+  }
+
+  &__title {
+    font-size: 16px;
+    color: $darkGrey;
+    padding: 27px 0 14px 0;
+    @include medium {
+
+      padding-bottom: 17px;
+    }
+  }
+
+  &__content {
+    font-size: 14px;
+    color: #848E97;
+    line-height: 21px;
+
+  }
+}
+
